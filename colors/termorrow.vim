@@ -31,17 +31,10 @@ let s:line       = "0"    " Black
 let s:selection  = "8"    " DarkGrey
 let s:comment    = "7"    " LightGrey
 
-let s:window     = "0"
-let s:darkcolumn = "NONE"
-
-let s:addbg      = "2"    " Green
-let s:addfg      = "0"    " Black    
-let s:changebg   = "0"    " Black
-let s:changefg   = "NONE" " Keep syntax highlighting
-
 let s:darkred    = "1"
 let s:red        = "9"    " LightRed
 
+let s:darkgreen  = "2"    " Green
 let s:green      = "10"   " LightGreen
 
 let s:orange     = "3"    " DarkYellow
@@ -85,12 +78,7 @@ exe "let s:bg_green      = ' ctermbg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ctermbg=".s:aqua      ."'"
 exe "let s:bg_blue       = ' ctermbg=".s:blue      ."'"
 exe "let s:bg_purple     = ' ctermbg=".s:purple    ."'"
-exe "let s:bg_window     = ' ctermbg=".s:window    ."'"
-exe "let s:bg_darkcolumn = ' ctermbg=".s:darkcolumn."'"
-exe "let s:bg_addbg      = ' ctermbg=".s:addbg     ."'"
-exe "let s:bg_addfg      = ' ctermbg=".s:addfg     ."'"
-exe "let s:bg_changebg   = ' ctermbg=".s:changebg  ."'"
-exe "let s:bg_changefg   = ' ctermbg=".s:changefg  ."'"
+exe "let s:bg_darkgreen  = ' ctermbg=".s:darkgreen ."'"
 exe "let s:bg_darkblue   = ' ctermbg=".s:darkblue  ."'"
 exe "let s:bg_darkcyan   = ' ctermbg=".s:darkcyan  ."'"
 exe "let s:bg_darkred    = ' ctermbg=".s:darkred   ."'"
@@ -109,12 +97,7 @@ exe "let s:fg_green      = ' ctermfg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ctermfg=".s:aqua      ."'"
 exe "let s:fg_blue       = ' ctermfg=".s:blue      ."'"
 exe "let s:fg_purple     = ' ctermfg=".s:purple    ."'"
-exe "let s:fg_window     = ' ctermfg=".s:window    ."'"
-exe "let s:fg_darkcolumn = ' ctermfg=".s:darkcolumn."'"
-exe "let s:fg_addbg      = ' ctermfg=".s:addbg     ."'"
-exe "let s:fg_addfg      = ' ctermfg=".s:addfg     ."'"
-exe "let s:fg_changebg   = ' ctermfg=".s:changebg  ."'"
-exe "let s:fg_changefg   = ' ctermfg=".s:changefg  ."'"
+exe "let s:fg_darkgreen  = ' ctermfg=".s:darkgreen ."'"
 exe "let s:fg_darkblue   = ' ctermfg=".s:darkblue  ."'"
 exe "let s:fg_darkcyan   = ' ctermfg=".s:darkcyan  ."'"
 exe "let s:fg_darkred    = ' ctermfg=".s:darkred   ."'"
@@ -141,19 +124,19 @@ exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! Directory"     .s:fg_blue        .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
+exe "hi! DiffAdd"       .s:fg_background  .s:bg_darkgreen   .s:fmt_none
+exe "hi! DiffChange"    .s:fg_none        .s:bg_background  .s:fmt_none
 exe "hi! DiffDelete"    .s:fg_background  .s:bg_red         .s:fmt_none
 exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
-exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
-exe "hi! VertSplit"     .s:fg_window      .s:bg_none        .s:fmt_none
-exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+exe "hi! ErrorMsg"      .s:fg_background  .s:bg_darkred     .s:fmt_stnd
+exe "hi! VertSplit"     .s:fg_background  .s:bg_none        .s:fmt_none
+exe "hi! Folded"        .s:fg_comment     .s:bg_none        .s:fmt_none
+exe "hi! FoldColumn"    .s:fg_none        .s:bg_none        .s:fmt_none
+exe "hi! SignColumn"    .s:fg_none        .s:bg_none        .s:fmt_none
 "		Incsearch"
 exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
-exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
+exe "hi! MatchParen"    .s:fg_foreground  .s:bg_background  .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
@@ -164,13 +147,13 @@ exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 exe "hi! Question"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Search"        .s:fg_background  .s:bg_green       .s:fmt_none
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
+exe "hi! SpellCap"      .s:fg_background  .s:bg_blue        .s:fmt_undr
 exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_darkcyan    .s:fmt_undr
-exe "hi! SpellBad"      .s:fg_red         .s:bg_darkred     .s:fmt_undr
+exe "hi! SpellBad"      .s:fg_background  .s:bg_red         .s:fmt_undr
 exe "hi! SpellRare"     .s:fg_purple      .s:bg_darkpurple  .s:fmt_undr
 exe "hi! StatusLine"    .s:fg_foreground  .s:bg_line        .s:fmt_none
 exe "hi! StatusLineNC"  .s:fg_comment     .s:bg_none        .s:fmt_none
-exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
+exe "hi! TabLine"       .s:fg_foreground  .s:bg_none        .s:fmt_revr
 "		TabLineFill"
 "		TabLineSel"
 exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
