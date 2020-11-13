@@ -1,7 +1,7 @@
 " File:       termorrow.vim
 " Maintainer: George Czabania (stayradiated)
 " URL:        https://github.com/stayradiated/vim-termorrow
-" Modified:   12 Apr 2014 12:30 AM AEST
+" Modified:   13 Nov 2020
 " License:    MIT
 
 " Description:
@@ -170,7 +170,7 @@ exe "hi!  Structure"   .s:fg_cyan     .s:bg_none     .s:fmt_none
 exe "hi!  Special"     .s:fg_green    .s:bg_none     .s:fmt_none
 exe "hi!  Underlined"  .s:fg_blue     .s:bg_none     .s:fmt_none
 exe "hi!  Ignore"      .s:fg_none     .s:bg_none     .s:fmt_none
-exe "hi!  Error"       .s:fg_red      .s:bg_darkred  .s:fmt_undr
+exe "hi!  Error"       .s:fg_darkred  .s:bg_none     .s:fmt_undr
 exe "hi!  Todo"        .s:fg_green    .s:bg_black    .s:fmt_none
 exe "hi!  qfLineNr"    .s:fg_yellow   .s:bg_none     .s:fmt_none
 
@@ -179,6 +179,11 @@ exe "hi!  qfLineNr"    .s:fg_yellow   .s:bg_none     .s:fmt_none
 "
 hi! link diffRemoved Constant
 hi! link diffAdded Special
+
+" Journal
+" ----------------------------------------------------------------------------
+"
+exe "hi! JournalPrivateNote" .s:fg_darkgreen .s:bg_none .s:fmt_none
 
 " Legal:
 " ----------------------------------------------------------------------------
