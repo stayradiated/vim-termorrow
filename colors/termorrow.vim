@@ -183,7 +183,7 @@ hi! link diffAdded Special
 " Journal
 " ----------------------------------------------------------------------------
 "
-exe "hi! JournalPrivateNote" .s:fg_darkgreen .s:bg_none .s:fmt_none
+exe "hi! journalPrivateNote" .s:fg_darkgreen .s:bg_none .s:fmt_none
 
 " Legal:
 " ----------------------------------------------------------------------------
