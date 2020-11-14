@@ -182,8 +182,15 @@ hi! link diffAdded Special
 
 " Journal
 " ----------------------------------------------------------------------------
-"
-exe "hi! journalPrivateNote" .s:fg_darkgreen .s:bg_none .s:fmt_none
+ 
+exe "hi! journalPrivateNote" .s:fg_darkgreen .s:bg_none      .s:fmt_none
+exe "hi! journalCalDay"      .s:fg_darkgray  .s:bg_none      .s:fmt_none
+exe "hi! journalCalLine"     .s:fg_darkgray  .s:bg_none      .s:fmt_none
+exe "hi! journalCalEventA"   .s:fg_magenta   .s:bg_black     .s:fmt_none
+exe "hi! journalCalEventB"   .s:fg_green     .s:bg_black     .s:fmt_none
+exe "hi! journalCalEventC"   .s:fg_blue      .s:bg_black     .s:fmt_none
+exe "hi! journalCalEventN"   .s:fg_red       .s:bg_black     .s:fmt_none
+exe "hi! journalCalEventT"   .s:fg_yellow    .s:bg_black     .s:fmt_none
 
 " Legal:
 " ----------------------------------------------------------------------------
