@@ -185,6 +185,7 @@ hi! link diffAdded Special
  
 exe "hi! journalPrivateNote" .s:fg_darkgreen .s:bg_none      .s:fmt_none
 exe "hi! journalCalDay"      .s:fg_darkgray  .s:bg_none      .s:fmt_none
+exe "hi! journalCalMonth"    .s:fg_yellow    .s:bg_none      .s:fmt_none
 exe "hi! journalCalLine"     .s:fg_darkgray  .s:bg_none      .s:fmt_none
 exe "hi! journalCalEventA"   .s:fg_magenta   .s:bg_black     .s:fmt_none
 exe "hi! journalCalEventB"   .s:fg_green     .s:bg_black     .s:fmt_none
